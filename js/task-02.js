@@ -18,6 +18,4 @@ ingredients.forEach((ingridient) => {
 
 const ulRef = document.querySelector("#ingredients");
 
-newList.forEach((li) => {
-  ulRef.appendChild(li);
-});
+ulRef.append(...newList);

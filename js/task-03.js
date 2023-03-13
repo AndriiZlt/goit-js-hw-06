@@ -15,9 +15,11 @@ const images = [
 
 const ulRef = document.querySelector(".gallery");
 
+const newElements = [];
 images.forEach((image) => {
-  ulRef.insertAdjacentHTML(
-    "beforeend",
+  newElements.push(
     `<li class="gallery-list"><img src = "${image.url}" " alt = "${image.alt}" width = 200>`
   );
 });
+
+ulRef.insertAdjacentHTML("beforeend", newElements.join(""));
