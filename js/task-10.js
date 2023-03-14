@@ -17,14 +17,15 @@ destroyBtnRef.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
   let boxSize = 30;
+  const newElements = [];
   for (let i = 0; i < amount; i += 1) {
     const randomColor = getRandomHexColor();
-    divBoxesRef.insertAdjacentHTML(
-      "beforeend",
+    newElements.push(
       `<div style="background-color:${randomColor}; width: ${boxSize}px; height: ${boxSize}px;"></div>`
     );
     boxSize += 10;
   }
+  divBoxesRef.insertAdjacentHTML("beforeend", newElements.join(""));
 }
 
 function destroyBoxes() {
